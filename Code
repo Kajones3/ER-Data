@@ -1,3 +1,6 @@
+#Read in the data
+R_Data <- read.csv(file.choose(),header = TRUE)
+
 #I attached the data to the frame
 attach(R_Data)
 
