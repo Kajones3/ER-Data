@@ -10,3 +10,11 @@ R_Data[cols] <- lapply(cols, factor)
 
 #Now I want to check my work
 sapply(R_Data, class)
+
+#That didn't work. Let's try again.
+#Let's change this character column to a factor
+R_Data$Referred <- as.factor(R_Data$Referred)
+
+#Let's test and see
+str(R_Data)
+
