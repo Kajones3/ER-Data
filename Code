@@ -50,3 +50,8 @@ count <- function(x, n){ length((which(x == n))) }
 perc <- function(x, n){ 100*length((which(x == n))) / length(x) }
 
 count(R_Data$Referred,"ER")
+
+#Let's do a frequency distribution
+with(R_Data, table(Referred,Showed))
+
+
