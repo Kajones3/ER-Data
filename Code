@@ -54,4 +54,5 @@ count(R_Data$Referred,"ER")
 #Let's do a frequency distribution
 with(R_Data, table(Referred,Showed))
 
-
+#How Far can we take this?
+with(R_Data, 100*(table(Referred, Scheduled)/sum(table(Referred, Scheduled))))
