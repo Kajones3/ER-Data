@@ -1,0 +1,12 @@
+#I attached the data to the frame
+attach(R_Data)
+
+#I wanted to combine the columns here
+cols <- c("Referred","Owner","AD","Campus","Status")
+
+#Let's change the columns to factors
+R_Data[cols] <- lapply(cols, factor)
+
+
+#Now I want to check my work
+sapply(R_Data, class)
