@@ -56,3 +56,28 @@ with(R_Data, table(Referred,Showed))
 
 #How Far can we take this?
 with(R_Data, 100*(table(Referred, Scheduled)/sum(table(Referred, Scheduled))))
+
+------------------------------------------------------------------------------------------------------
+
+#Time to learn about reading in data. Let's see where the Working directory is.
+getwd()
+df <- read.csv("R_Data.csv")
+df
+str(df)
+
+#Okay, let's try subsetting the data
+Jennifer <- subset(df,Owner=="Jennifer Gregory")
+Jennifer
+#That worked. Let's try seeing how many enrollments Jenny had
+sum(Jennifer$Enroll)
+
+#Let's look at all the data pertaining only to Jennifer.
+table(Jennifer$Referred)
+
+#okay let's add in the ER data
+er <- subset(df,Referred=="ER")
+str(er)
+print(er$Referred)
+
+#Make a df just for those who took a tour.
+er_shows <- df[(df$Showed_Date != "" & df$Referred == "ER"),]
